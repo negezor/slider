@@ -213,17 +213,17 @@ export default function useSlider (props, context, dependencies)
 
   // ============== WATCHERS ==============
 
-  watch(isRange, refresh, { immediate: false })
-  watch(min, refresh, { immediate: false })
-  watch(max, refresh, { immediate: false })
-  watch(step, refresh, { immediate: false })
-  watch(orientation, refresh, { immediate: false })
-  watch(direction, refresh, { immediate: false })
-  watch(tooltips, refresh, { immediate: false })
-  watch(merge, refresh, { immediate: false })
-  watch(format, refresh, { immediate: false, deep: true })
-  watch(options, refresh, { immediate: false, deep: true })
-  watch(classes, refresh, { immediate: false, deep: true })
+  watch(isRange, refresh, { immediate: false })
+  watch(min, refresh, { immediate: false })
+  watch(max, refresh, { immediate: false })
+  watch(step, refresh, { immediate: false })
+  watch(orientation, refresh, { immediate: false })
+  watch(direction, refresh, { immediate: false })
+  watch(tooltips, refresh, { immediate: false })
+  watch(merge, refresh, { immediate: false })
+  watch(format, refresh, { immediate: false, deep: true })
+  watch(options, refresh, { immediate: false, deep: true })
+  watch(classes, refresh, { immediate: false, deep: true })
 
   watch(value, (value, old) => {
     // If old was 0, null, undefined, '', false
@@ -245,7 +245,7 @@ export default function useSlider (props, context, dependencies)
     ) {
       refresh()
     }
-  }, { immediate: false })
+  }, { immediate: false })
 
   watch(value, (newValue) => {
     if (isNullish(newValue)) {
