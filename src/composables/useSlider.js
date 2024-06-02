@@ -1,7 +1,8 @@
-import { ref, shallowRef, computed, toRefs, watch, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, shallowRef, toRefs, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import nouislider from 'nouislider'
 import isNullish from './../utils/isNullish'
 import arraysEqual from './../utils/arraysEqual'
+import toRef from '../utils/toRef'
 
 export default function useSlider (props, context, dependencies)
 {
@@ -33,7 +34,7 @@ export default function useSlider (props, context, dependencies)
   // ============== COMPUTED ==============
 
   // no export
-  const defaultOptions = computed(() => {
+  const defaultOptions = toRef(() => {
     let defaultOptions = {
       cssPrefix: '',
       cssClasses: classList.value,
@@ -71,7 +72,7 @@ export default function useSlider (props, context, dependencies)
     return defaultOptions
   })
 
-  const sliderProps = computed(() => {
+  const sliderProps = toRef(() => {
     let sliderProps = {
       id: id.value ? id.value : undefined,
     }
@@ -83,7 +84,7 @@ export default function useSlider (props, context, dependencies)
     return sliderProps
   })
 
-  const isRange = computed(() => {
+  const isRange = toRef(() => {
     return Array.isArray(value.value)
   })
 
