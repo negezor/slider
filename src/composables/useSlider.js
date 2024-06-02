@@ -56,10 +56,10 @@ export default function useSlider (props, context, dependencies)
       defaultOptions.connect = true
     }
 
-    if ((ariaLabelledby && ariaLabelledby.value) || (aria && Object.keys(aria.value).length)) {
+    if ((ariaLabelledby.value) || (aria && Object.keys(aria.value).length)) {
       let handles = Array.isArray(value.value) ? value.value : [value.value]
 
-      defaultOptions.handleAttributes = handles.map(h => (Object.assign({}, aria.value, ariaLabelledby && ariaLabelledby.value ? {
+      defaultOptions.handleAttributes = handles.map(h => (Object.assign({}, aria.value, ariaLabelledby.value ? {
         'aria-labelledby': ariaLabelledby.value,
       }: {})))
     }
@@ -73,7 +73,7 @@ export default function useSlider (props, context, dependencies)
 
   const sliderProps = computed(() => {
     let sliderProps = {
-      id: id && id.value ? id.value : undefined,
+      id: id.value ? id.value : undefined,
     }
 
     if (disabled.value) {
