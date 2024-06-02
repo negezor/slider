@@ -25,7 +25,7 @@ export default function useSlider (props, context, dependencies)
 
   const slider = shallowRef(null)
 
-  const slider$ = ref(null)
+  const slider$ = shallowRef(null)
 
   // no export
   const inited = ref(false)
