@@ -1,4 +1,4 @@
-import { ref, computed, toRefs, watch, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, shallowRef, computed, toRefs, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import nouislider from 'nouislider'
 import isNullish from './../utils/isNullish'
 import arraysEqual from './../utils/arraysEqual'
@@ -23,7 +23,7 @@ export default function useSlider (props, context, dependencies)
 
   // ================ DATA ================
 
-  const slider = ref(null)
+  const slider = shallowRef(null)
 
   const slider$ = ref(null)
 
