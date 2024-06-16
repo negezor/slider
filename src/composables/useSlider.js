@@ -195,6 +195,10 @@ export default function useSlider (props, context, dependencies)
   }
 
   const destroy = () => {
+    if (!slider$.value) {
+      return;
+    }
+
     slider$.value.off()
     slider$.value.destroy()
     slider$.value = null
